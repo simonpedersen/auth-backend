@@ -43,6 +43,7 @@ app.post("/register", (request, response) => {
     .then((hashedPassword) => {
       // create a new user instance and collect the data
       const user = new User({
+        name: request.body.name,
         email: request.body.email,
         password: hashedPassword,
       });
@@ -87,9 +88,8 @@ app.post("/login", (request, response) => {
 
         // if the passwords match
         .then((passwordCheck) => {
-
           // check if password matches
-          if(!passwordCheck) {
+          if (!passwordCheck) {
             return response.status(400).send({
               message: "Passwords does not match",
               error,
