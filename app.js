@@ -46,6 +46,7 @@ app.post("/register", (request, response) => {
         name: request.body.name,
         email: request.body.email,
         password: hashedPassword,
+        mentor: request.body.mentor,
       });
 
       // save the new user
