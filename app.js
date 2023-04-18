@@ -42,11 +42,18 @@ app.post("/register", (request, response) => {
     .hash(request.body.password, 10)
     .then((hashedPassword) => {
       // create a new user instance and collect the data
+
+      if (request.body.role == "mentee") {
+        mentor = false;
+      } else {
+        mentor = true;
+      }
+
       const user = new User({
         name: request.body.name,
         email: request.body.email,
         password: hashedPassword,
-        mentor: request.body.mentor,
+        mentor: mentor,
       });
 
       // save the new user
