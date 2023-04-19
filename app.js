@@ -108,6 +108,7 @@ app.post("/login", (request, response) => {
           const token = jwt.sign(
             {
               userId: user._id,
+              userName: user.name,
               userEmail: user.email,
               userMentor: user.mentor,
             },
