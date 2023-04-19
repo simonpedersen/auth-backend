@@ -120,6 +120,7 @@ app.post("/login", (request, response) => {
             message: "Login Successful",
             email: user.email,
             name: user.name,
+            token: token,
           });
         })
         // catch error if password do not match
