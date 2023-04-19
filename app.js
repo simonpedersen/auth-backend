@@ -109,6 +109,7 @@ app.post("/login", (request, response) => {
             {
               userId: user._id,
               userEmail: user.email,
+              userMentor: user.mentor,
             },
             "RANDOM-TOKEN",
             { expiresIn: "24h" }
@@ -118,7 +119,7 @@ app.post("/login", (request, response) => {
           response.status(200).send({
             message: "Login Successful",
             email: user.email,
-            token,
+            name: user.name,
           });
         })
         // catch error if password do not match
