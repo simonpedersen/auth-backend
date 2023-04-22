@@ -27,6 +27,78 @@ const UserSchema = new mongoose.Schema({
     type: Boolean,
     required: [true, "Please provide a role"],
   },
+
+  mentees_id: {
+    type: Array,
+  },
+
+  mentor_id: {
+    type: String,
+  },
+
+  interests: {
+    type: Array,
+  },
+
+  academic_background: {
+    type: String,
+  },
+
+  field_of_study: {
+    type: Array,
+  },
+
+  profile_pic: {
+    type: Picture,
+  },
+
+  work_experience: {
+    type: Array,
+  },
+
+  industry_field: {
+    type: Array,
+  },
+
+  description: {
+    type: String,
+  },
+
+  available_time_slots: {
+    type: Array,
+  },
+
+  maximum_mentees: {
+    type: Integer,
+  },
+
+  booked_times: {
+    type: Array,
+  },
+
+  assignments: {
+    type: Array,
+  },
+
+  age: {
+    type: Integer,
+  },
+
+  native_language: {
+    type: String,
+  },
+
+  secondary_languages: {
+    type: Array,
+  },
+
+  registration_date: {
+    type: Date,
+  },
+
+  files: {
+    type: Object,
+  },
 });
 
 // export UserSchema
