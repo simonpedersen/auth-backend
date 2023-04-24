@@ -28,6 +28,11 @@ const UserSchema = new mongoose.Schema({
     required: [true, "Please provide a role"],
   },
 
+  form_succeded: {
+    type: Boolean,
+    default: false,
+  },
+
   mentees_id: {
     type: [Number],
   },
