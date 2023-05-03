@@ -83,6 +83,52 @@ app.post("/register", (request, response) => {
     });
 });
 
+app.post("/update-mentee-info", (request, response) => {
+  const { email, interestsArray, professionalArray, academicArray } =
+    request.body;
+
+  // find the user by ID
+  User.findOne({ email: email })
+    .then((user) => {
+      if (!user) {
+        return response.status(404).send({
+          message: "User not found",
+        });
+      }
+
+      // update the user's name and email
+      user.interests = interestsArray;
+      user.work_experience = professionalArray;
+      user.field_of_study = academicArray;
+      user.form_succeded = true;
+
+      // save the updated user
+      user
+        .save()
+        // return success if the user is updated in the database successfully
+        .then((result) => {
+          response.status(200).send({
+            message: "User updated successfully",
+            result,
+          });
+        })
+        // catch error if the user wasn't updated successfully in the database
+        .catch((error) => {
+          response.status(500).send({
+            message: "Error updating user",
+            error,
+          });
+        });
+    })
+    // catch error if the user isn't found in the database
+    .catch((error) => {
+      response.status(500).send({
+        message: "Error finding user",
+        error,
+      });
+    });
+});
+
 // login endpoint
 app.post("/login", (request, response) => {
   // check if email exists
@@ -111,7 +157,7 @@ app.post("/login", (request, response) => {
               userName: user.name,
               userEmail: user.email,
               userMentor: user.mentor,
-              signUped: user.form_succeded,
+              isSignedUp: user.form_succeded,
             },
             "RANDOM-TOKEN",
             { expiresIn: "24h" }
