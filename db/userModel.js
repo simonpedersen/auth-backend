@@ -42,7 +42,7 @@ const UserSchema = new mongoose.Schema({
   },
 
   interests: {
-    type: [String],
+    type: [{}],
   },
 
   academic_background: {
@@ -50,7 +50,7 @@ const UserSchema = new mongoose.Schema({
   },
 
   field_of_study: {
-    type: [String],
+    type: [{}],
   },
 
   profile_pic: {
@@ -58,11 +58,11 @@ const UserSchema = new mongoose.Schema({
   },
 
   work_experience: {
-    type: [String],
+    type: [{}],
   },
 
   industry_field: {
-    type: [String],
+    type: [{}],
   },
 
   description: {

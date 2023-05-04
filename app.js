@@ -95,8 +95,8 @@ app.put("/update-mentee-info", (request, response) => {
 
       // update the user's name and email
       user.interests = request.body.interestsArray;
-      // user.work_experience = professionalArray;
-      // user.field_of_study = academicArray;
+      user.work_experience = request.body.professionalArray;
+      user.field_of_study = request.body.academicArray;
       user.form_succeded = true;
 
       // save the updated user
