@@ -84,9 +84,6 @@ app.post("/register", (request, response) => {
 });
 
 app.put("/update-mentee-info", (request, response) => {
-  const { email, interestsArray, professionalArray, academicArray } =
-    request.body;
-
   // find the user by ID
   User.findOne({ email: request.body.email })
     .then((user) => {
@@ -97,7 +94,7 @@ app.put("/update-mentee-info", (request, response) => {
       }
 
       // update the user's name and email
-      //user.interests = request.body.email;
+      user.interests = request.body.email;
       // user.work_experience = professionalArray;
       // user.field_of_study = academicArray;
       user.form_succeded = true;
