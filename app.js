@@ -88,7 +88,7 @@ app.post("/update-mentee-info", (request, response) => {
     request.body;
 
   // find the user by ID
-  User.findOne({ email: email })
+  User.findOne({ email: request.body.email })
     .then((user) => {
       if (!user) {
         return response.status(404).send({
@@ -98,8 +98,8 @@ app.post("/update-mentee-info", (request, response) => {
 
       // update the user's name and email
       user.interests = interestsArray;
-      user.work_experience = professionalArray;
-      user.field_of_study = academicArray;
+      // user.work_experience = professionalArray;
+      // user.field_of_study = academicArray;
       user.form_succeded = true;
 
       // save the updated user
