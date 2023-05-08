@@ -210,15 +210,15 @@ app.get("/auth-endpoint", auth, (request, response) => {
 //   }
 // });
 
-// // Route for getting all mentor users
-// app.get("/mentors", async (req, res) => {
-//   try {
-//     const mentors = await User.find({ mentor: true });
-//     res.status(200).json(mentors);
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).json({ message: "Server Error" });
-//   }
-// });
+// Route for getting all mentor users
+app.get("/mentors", async (req, res) => {
+  try {
+    const mentors = await User.find({ mentor: true });
+    res.status(200).json(mentors);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server Error" });
+  }
+});
 
 module.exports = app;
