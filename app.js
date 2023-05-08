@@ -196,29 +196,29 @@ app.get("/auth-endpoint", auth, (request, response) => {
   response.send({ message: "You are authorized to access me" });
 });
 
-// Route for getting a single user by ID
-router.get("/users/:id", async (req, res) => {
-  try {
-    const user = await User.findById(req.params.id);
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
-    }
-    return res.json(user);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Server error" });
-  }
-});
+// // Route for getting a single user by ID
+// router.get("/users/:id", async (req, res) => {
+//   try {
+//     const user = await User.findById(req.params.id);
+//     if (!user) {
+//       return res.status(404).json({ message: "User not found" });
+//     }
+//     return res.json(user);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ message: "Server error" });
+//   }
+// });
 
-// Route for getting all mentor users
-app.get("/mentors", async (req, res) => {
-  try {
-    const mentors = await User.find({ mentor: true });
-    res.status(200).json(mentors);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Server Error" });
-  }
-});
+// // Route for getting all mentor users
+// app.get("/mentors", async (req, res) => {
+//   try {
+//     const mentors = await User.find({ mentor: true });
+//     res.status(200).json(mentors);
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json({ message: "Server Error" });
+//   }
+// });
 
 module.exports = app;
