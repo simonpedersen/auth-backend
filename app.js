@@ -88,18 +88,18 @@ app.put("/update-user-info", (request, response) => {
   User.findById(request.body.userID)
     .then((user) => {
       if (!user) {
-        console.log(req.body.userID);
+        console.log(request.body.userID);
         return response.status(404).send({
           message: "User not found",
         });
       }
 
       // update the user
-      if (req.body.name) {
-        user.name = req.body.name;
+      if (request.body.name) {
+        user.name = request.body.name;
       }
-      if (req.body.email) {
-        user.email = req.body.email;
+      if (request.body.email) {
+        user.email = request.body.email;
       }
       // if (req.body.password) {
       //   user.password = req.body.password;
