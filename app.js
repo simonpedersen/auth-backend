@@ -101,84 +101,81 @@ app.put("/update-user-info", (request, response) => {
       if (req.body.email) {
         user.email = req.body.email;
       }
-      if (req.body.password) {
-        user.password = req.body.password;
-      }
-      if (req.body.mentor !== undefined) {
-        user.mentor = req.body.mentor;
-      }
-      if (req.body.form_succeded !== undefined) {
-        user.form_succeded = req.body.form_succeded;
-      }
-      if (req.body.mentees_id) {
-        user.mentees_id = req.body.mentees_id;
-      }
-      if (req.body.mentor_id) {
-        user.mentor_id = req.body.mentor_id;
-      }
-      if (req.body.interestsArray) {
-        user.interests = req.body.interestsArray;
-      }
-      if (
-        req.body.experienceObject &&
-        req.body.experienceObject.academicExperience
-      ) {
-        user.academic_level = req.body.experienceObject.academicExperience;
-      }
-      if (req.body.academicArray) {
-        user.academic_experiences = req.body.academicArray;
-      }
-      if (
-        req.body.personalInfoObject &&
-        req.body.personalInfoObject.profilePicture
-      ) {
-        user.profile_pic = req.body.personalInfoObject.profilePicture;
-      }
-      if (req.body.professionalArray) {
-        user.work_experience = req.body.professionalArray;
-      }
-      if (req.body.experienceObject && req.body.experienceObject.description) {
-        user.personal_description = req.body.experienceObject.description;
-      }
-      if (req.body.available_time_slots) {
-        user.available_time_slots = req.body.available_time_slots;
-      }
-      if (req.body.maximum_mentees) {
-        user.maximum_mentees = req.body.maximum_mentees;
-      }
-      if (req.body.booked_times) {
-        user.booked_times = req.body.booked_times;
-      }
-      if (req.body.assignments) {
-        user.assignments = req.body.assignments;
-      }
-      if (req.body.personalInfoObject && req.body.personalInfoObject.age) {
-        user.age = req.body.personalInfoObject.age;
-      }
-      if (eq.body.experienceObject && req.body.experienceObject.languages) {
-        user.languages = req.bodyreq.body.experienceObject.languages;
-      }
-      if (req.body.files) {
-        user.files = req.body.files;
-      }
-      if (
-        req.body.personalInfoObject &&
-        req.body.personalInfoObject.phoneNumber
-      ) {
-        user.phone_number = req.body.personalInfoObject.phoneNumber;
-      }
-      if (req.body.personalInfoObject && req.body.personalInfoObject.address) {
-        user.address = req.body.personalInfoObject.address;
-      }
-      if (req.body.personalInfoObject && req.body.personalInfoObject.city) {
-        user.city = req.body.personalInfoObject.city;
-      }
-      if (req.body.personalInfoObject && req.body.personalInfoObject.zipCode) {
-        user.postal_code = req.body.personalInfoObject.zipCode;
-      }
-      if (req.body.personalInfoObject && req.body.personalInfoObject.gender) {
-        user.gender = req.body.personalInfoObject.gender;
-      }
+      // if (req.body.password) {
+      //   user.password = req.body.password;
+      // }
+      // if (req.body.mentor !== undefined) {
+      //   user.mentor = req.body.mentor;
+      // }
+      // if (req.body.mentees_id) {
+      //   user.mentees_id = req.body.mentees_id;
+      // }
+      // if (req.body.mentor_id) {
+      //   user.mentor_id = req.body.mentor_id;
+      // }
+      // if (req.body.interestsArray) {
+      //   user.interests = req.body.interestsArray;
+      // }
+      // if (
+      //   req.body.experienceObject &&
+      //   req.body.experienceObject.academicExperience
+      // ) {
+      //   user.academic_level = req.body.experienceObject.academicExperience;
+      // }
+      // if (req.body.academicArray) {
+      //   user.academic_experiences = req.body.academicArray;
+      // }
+      // if (
+      //   req.body.personalInfoObject &&
+      //   req.body.personalInfoObject.profilePicture
+      // ) {
+      //   user.profile_pic = req.body.personalInfoObject.profilePicture;
+      // }
+      // if (req.body.professionalArray) {
+      //   user.work_experience = req.body.professionalArray;
+      // }
+      // if (req.body.experienceObject && req.body.experienceObject.description) {
+      //   user.personal_description = req.body.experienceObject.description;
+      // }
+      // if (req.body.available_time_slots) {
+      //   user.available_time_slots = req.body.available_time_slots;
+      // }
+      // if (req.body.maximum_mentees) {
+      //   user.maximum_mentees = req.body.maximum_mentees;
+      // }
+      // if (req.body.booked_times) {
+      //   user.booked_times = req.body.booked_times;
+      // }
+      // if (req.body.assignments) {
+      //   user.assignments = req.body.assignments;
+      // }
+      // if (req.body.personalInfoObject && req.body.personalInfoObject.age) {
+      //   user.age = req.body.personalInfoObject.age;
+      // }
+      // if (eq.body.experienceObject && req.body.experienceObject.languages) {
+      //   user.languages = req.bodyreq.body.experienceObject.languages;
+      // }
+      // if (req.body.files) {
+      //   user.files = req.body.files;
+      // }
+      // if (
+      //   req.body.personalInfoObject &&
+      //   req.body.personalInfoObject.phoneNumber
+      // ) {
+      //   user.phone_number = req.body.personalInfoObject.phoneNumber;
+      // }
+      // if (req.body.personalInfoObject && req.body.personalInfoObject.address) {
+      //   user.address = req.body.personalInfoObject.address;
+      // }
+      // if (req.body.personalInfoObject && req.body.personalInfoObject.city) {
+      //   user.city = req.body.personalInfoObject.city;
+      // }
+      // if (req.body.personalInfoObject && req.body.personalInfoObject.zipCode) {
+      //   user.postal_code = req.body.personalInfoObject.zipCode;
+      // }
+      // if (req.body.personalInfoObject && req.body.personalInfoObject.gender) {
+      //   user.gender = req.body.personalInfoObject.gender;
+      // }
       user.form_succeded = true;
 
       // save the updated user
