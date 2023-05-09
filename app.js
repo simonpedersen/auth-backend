@@ -85,10 +85,10 @@ app.post("/register", (request, response) => {
 
 app.put("/update-user-info", (request, response) => {
   // find the user by ID
-  User.findById(request.body.id)
+  User.findById(request.body.userID)
     .then((user) => {
       if (!user) {
-        console.log(req.body.id);
+        console.log(req.body.userID);
         return response.status(404).send({
           message: "User not found",
         });
