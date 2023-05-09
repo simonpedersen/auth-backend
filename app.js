@@ -85,7 +85,7 @@ app.post("/register", (request, response) => {
 
 app.put("/update-user-info", (request, response) => {
   // find the user by ID
-  User.findOne({ email: request.body.email })
+  User.findById(request.body.id)
     .then((user) => {
       if (!user) {
         return response.status(404).send({
