@@ -34,7 +34,7 @@ const UserSchema = new mongoose.Schema({
   },
 
   mentees_id: {
-    type: [Number],
+    type: [String],
   },
 
   mentor_id: {
@@ -45,11 +45,11 @@ const UserSchema = new mongoose.Schema({
     type: [{}],
   },
 
-  academic_background: {
+  academic_level: {
     type: String,
   },
 
-  field_of_study: {
+  academic_experiences: {
     type: [{}],
   },
 
@@ -61,11 +61,7 @@ const UserSchema = new mongoose.Schema({
     type: [{}],
   },
 
-  industry_field: {
-    type: [{}],
-  },
-
-  description: {
+  personal_description: {
     type: String,
   },
 
@@ -82,18 +78,14 @@ const UserSchema = new mongoose.Schema({
   },
 
   assignments: {
-    type: [String],
+    type: [{}],
   },
 
   age: {
     type: Number,
   },
 
-  native_language: {
-    type: String,
-  },
-
-  secondary_languages: {
+  languages: {
     type: [String],
   },
 
@@ -105,6 +97,26 @@ const UserSchema = new mongoose.Schema({
   files: {
     type: Map,
     of: String,
+  },
+
+  phone_number: {
+    type: String,
+  },
+
+  address: {
+    type: String,
+  },
+
+  city: {
+    type: String,
+  },
+
+  postal_code: {
+    type: String,
+  },
+
+  gender: {
+    type: String,
   },
 });
 
