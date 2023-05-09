@@ -88,6 +88,7 @@ app.put("/update-user-info", (request, response) => {
   User.findById(request.body.id)
     .then((user) => {
       if (!user) {
+        console.log(req.body.id);
         return response.status(404).send({
           message: "User not found",
         });
