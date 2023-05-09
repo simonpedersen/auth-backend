@@ -134,69 +134,69 @@ app.put("/update-user-info", (request, response) => {
       if (request.body.professionalArray) {
         user.work_experience = request.body.professionalArray;
       }
-      if (
-        request.body.experienceObject &&
-        request.body.experienceObject.description
-      ) {
-        user.personal_description = request.body.experienceObject.description;
-      }
-      if (request.body.available_time_slots) {
-        user.available_time_slots = request.body.available_time_slots;
-      }
-      if (request.body.maximum_mentees) {
-        user.maximum_mentees = request.body.maximum_mentees;
-      }
-      if (request.body.booked_times) {
-        user.booked_times = request.body.booked_times;
-      }
-      if (request.body.assignments) {
-        user.assignments = request.body.assignments;
-      }
-      if (
-        request.body.personalInfoObject &&
-        request.body.personalInfoObject.age
-      ) {
-        user.age = request.body.personalInfoObject.age;
-      }
-      if (
-        request.body.experienceObject &&
-        request.body.experienceObject.languages
-      ) {
-        user.languages = request.bodyrequest.body.experienceObject.languages;
-      }
-      if (request.body.files) {
-        user.files = request.body.files;
-      }
-      if (
-        request.body.personalInfoObject &&
-        request.body.personalInfoObject.phoneNumber
-      ) {
-        user.phone_number = request.body.personalInfoObject.phoneNumber;
-      }
-      if (
-        request.body.personalInfoObject &&
-        request.body.personalInfoObject.address
-      ) {
-        user.address = request.body.personalInfoObject.address;
-      }
-      if (
-        request.body.personalInfoObject &&
-        request.body.personalInfoObject.city
-      ) {
-        user.city = request.body.personalInfoObject.city;
-      }
-      if (
-        request.body.personalInfoObject &&
-        request.body.personalInfoObject.zipCode
-      ) {
-        user.postal_code = request.body.personalInfoObject.zipCode;
-      }
-      if (
-        request.body.personalInfoObject &&
-        request.body.personalInfoObject.gender
-      ) {
-        user.gender = request.body.personalInfoObject.gender;
-      }
+      // if (
+      //   request.body.experienceObject &&
+      //   request.body.experienceObject.description
+      // ) {
+      //   user.personal_description = request.body.experienceObject.description;
+      // }
+      // if (request.body.available_time_slots) {
+      //   user.available_time_slots = request.body.available_time_slots;
+      // }
+      // if (request.body.maximum_mentees) {
+      //   user.maximum_mentees = request.body.maximum_mentees;
+      // }
+      // if (request.body.booked_times) {
+      //   user.booked_times = request.body.booked_times;
+      // }
+      // if (request.body.assignments) {
+      //   user.assignments = request.body.assignments;
+      // }
+      // if (
+      //   request.body.personalInfoObject &&
+      //   request.body.personalInfoObject.age
+      // ) {
+      //   user.age = request.body.personalInfoObject.age;
+      // }
+      // if (
+      //   request.body.experienceObject &&
+      //   request.body.experienceObject.languages
+      // ) {
+      //   user.languages = request.bodyrequest.body.experienceObject.languages;
+      // }
+      // if (request.body.files) {
+      //   user.files = request.body.files;
+      // }
+      // if (
+      //   request.body.personalInfoObject &&
+      //   request.body.personalInfoObject.phoneNumber
+      // ) {
+      //   user.phone_number = request.body.personalInfoObject.phoneNumber;
+      // }
+      // if (
+      //   request.body.personalInfoObject &&
+      //   request.body.personalInfoObject.address
+      // ) {
+      //   user.address = request.body.personalInfoObject.address;
+      // }
+      // if (
+      //   request.body.personalInfoObject &&
+      //   request.body.personalInfoObject.city
+      // ) {
+      //   user.city = request.body.personalInfoObject.city;
+      // }
+      // if (
+      //   request.body.personalInfoObject &&
+      //   request.body.personalInfoObject.zipCode
+      // ) {
+      //   user.postal_code = request.body.personalInfoObject.zipCode;
+      // }
+      // if (
+      //   request.body.personalInfoObject &&
+      //   request.body.personalInfoObject.gender
+      // ) {
+      //   user.gender = request.body.personalInfoObject.gender;
+      // }
       user.form_succeded = true;
 
       // save the updated user
