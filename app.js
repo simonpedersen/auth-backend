@@ -101,81 +101,102 @@ app.put("/update-user-info", (request, response) => {
       if (request.body.email) {
         user.email = request.body.email;
       }
-      // if (req.body.password) {
-      //   user.password = req.body.password;
-      // }
-      // if (req.body.mentor !== undefined) {
-      //   user.mentor = req.body.mentor;
-      // }
-      // if (req.body.mentees_id) {
-      //   user.mentees_id = req.body.mentees_id;
-      // }
-      // if (req.body.mentor_id) {
-      //   user.mentor_id = req.body.mentor_id;
-      // }
-      // if (req.body.interestsArray) {
-      //   user.interests = req.body.interestsArray;
-      // }
-      // if (
-      //   req.body.experienceObject &&
-      //   req.body.experienceObject.academicExperience
-      // ) {
-      //   user.academic_level = req.body.experienceObject.academicExperience;
-      // }
-      // if (req.body.academicArray) {
-      //   user.academic_experiences = req.body.academicArray;
-      // }
-      // if (
-      //   req.body.personalInfoObject &&
-      //   req.body.personalInfoObject.profilePicture
-      // ) {
-      //   user.profile_pic = req.body.personalInfoObject.profilePicture;
-      // }
-      // if (req.body.professionalArray) {
-      //   user.work_experience = req.body.professionalArray;
-      // }
-      // if (req.body.experienceObject && req.body.experienceObject.description) {
-      //   user.personal_description = req.body.experienceObject.description;
-      // }
-      // if (req.body.available_time_slots) {
-      //   user.available_time_slots = req.body.available_time_slots;
-      // }
-      // if (req.body.maximum_mentees) {
-      //   user.maximum_mentees = req.body.maximum_mentees;
-      // }
-      // if (req.body.booked_times) {
-      //   user.booked_times = req.body.booked_times;
-      // }
-      // if (req.body.assignments) {
-      //   user.assignments = req.body.assignments;
-      // }
-      // if (req.body.personalInfoObject && req.body.personalInfoObject.age) {
-      //   user.age = req.body.personalInfoObject.age;
-      // }
-      // if (eq.body.experienceObject && req.body.experienceObject.languages) {
-      //   user.languages = req.bodyreq.body.experienceObject.languages;
-      // }
-      // if (req.body.files) {
-      //   user.files = req.body.files;
-      // }
-      // if (
-      //   req.body.personalInfoObject &&
-      //   req.body.personalInfoObject.phoneNumber
-      // ) {
-      //   user.phone_number = req.body.personalInfoObject.phoneNumber;
-      // }
-      // if (req.body.personalInfoObject && req.body.personalInfoObject.address) {
-      //   user.address = req.body.personalInfoObject.address;
-      // }
-      // if (req.body.personalInfoObject && req.body.personalInfoObject.city) {
-      //   user.city = req.body.personalInfoObject.city;
-      // }
-      // if (req.body.personalInfoObject && req.body.personalInfoObject.zipCode) {
-      //   user.postal_code = req.body.personalInfoObject.zipCode;
-      // }
-      // if (req.body.personalInfoObject && req.body.personalInfoObject.gender) {
-      //   user.gender = req.body.personalInfoObject.gender;
-      // }
+      if (request.body.password) {
+        user.password = request.body.password;
+      }
+      if (request.body.mentor !== undefined) {
+        user.mentor = request.body.mentor;
+      }
+      if (request.body.mentees_id) {
+        user.mentees_id = request.body.mentees_id;
+      }
+      if (request.body.mentor_id) {
+        user.mentor_id = request.body.mentor_id;
+      }
+      if (request.body.interestsArray) {
+        user.interests = request.body.interestsArray;
+      }
+      if (
+        request.body.experienceObject &&
+        request.body.experienceObject.academicExperience
+      ) {
+        user.academic_level = request.body.experienceObject.academicExperience;
+      }
+      if (request.body.academicArray) {
+        user.academic_experiences = request.body.academicArray;
+      }
+      if (
+        request.body.personalInfoObject &&
+        request.body.personalInfoObject.profilePicture
+      ) {
+        user.profile_pic = request.body.personalInfoObject.profilePicture;
+      }
+      if (request.body.professionalArray) {
+        user.work_experience = request.body.professionalArray;
+      }
+      if (
+        request.body.experienceObject &&
+        request.body.experienceObject.description
+      ) {
+        user.personal_description = request.body.experienceObject.description;
+      }
+      if (request.body.available_time_slots) {
+        user.available_time_slots = request.body.available_time_slots;
+      }
+      if (request.body.maximum_mentees) {
+        user.maximum_mentees = request.body.maximum_mentees;
+      }
+      if (request.body.booked_times) {
+        user.booked_times = request.body.booked_times;
+      }
+      if (request.body.assignments) {
+        user.assignments = request.body.assignments;
+      }
+      if (
+        request.body.personalInfoObject &&
+        request.body.personalInfoObject.age
+      ) {
+        user.age = request.body.personalInfoObject.age;
+      }
+      if (
+        request.body.experienceObject &&
+        request.body.experienceObject.languages
+      ) {
+        user.languages = request.bodyrequest.body.experienceObject.languages;
+      }
+      if (request.body.files) {
+        user.files = request.body.files;
+      }
+      if (
+        request.body.personalInfoObject &&
+        request.body.personalInfoObject.phoneNumber
+      ) {
+        user.phone_number = request.body.personalInfoObject.phoneNumber;
+      }
+      if (
+        request.body.personalInfoObject &&
+        request.body.personalInfoObject.address
+      ) {
+        user.address = request.body.personalInfoObject.address;
+      }
+      if (
+        request.body.personalInfoObject &&
+        request.body.personalInfoObject.city
+      ) {
+        user.city = request.body.personalInfoObject.city;
+      }
+      if (
+        request.body.personalInfoObject &&
+        request.body.personalInfoObject.zipCode
+      ) {
+        user.postal_code = request.body.personalInfoObject.zipCode;
+      }
+      if (
+        request.body.personalInfoObject &&
+        request.body.personalInfoObject.gender
+      ) {
+        user.gender = request.body.personalInfoObject.gender;
+      }
       user.form_succeded = true;
 
       // save the updated user
