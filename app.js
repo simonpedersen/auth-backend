@@ -255,6 +255,7 @@ app.post("/login", (request, response) => {
               userEmail: user.email,
               userMentor: user.mentor,
               isSignedUp: user.form_succeded,
+              interests: user.interests,
             },
             "RANDOM-TOKEN",
             { expiresIn: "24h" }
