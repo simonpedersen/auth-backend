@@ -152,12 +152,12 @@ app.put("/update-user-info", (request, response) => {
       if (request.body.assignments) {
         user.assignments = request.body.assignments;
       }
-      if (
-        request.body.personalInfoObject &&
-        request.body.personalInfoObject.age
-      ) {
-        user.age = parseInt(request.body.personalInfoObject.age);
-      }
+      // if (
+      //   request.body.personalInfoObject &&
+      //   request.body.personalInfoObject.age
+      // ) {
+      //   user.age = parseInt(request.body.personalInfoObject.age);
+      // }
       if (
         request.body.experienceObject &&
         request.body.experienceObject.languages
