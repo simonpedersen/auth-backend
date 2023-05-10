@@ -144,7 +144,7 @@ app.put("/update-user-info", (request, response) => {
         user.available_time_slots = request.body.available_time_slots;
       }
       if (request.body.maximum_mentees) {
-        user.maximum_mentees = parseInt(request.body.maximum_mentees);
+        user.maximum_mentees = request.body.maximum_mentees;
       }
       if (request.body.booked_times) {
         user.booked_times = request.body.booked_times;
@@ -156,23 +156,23 @@ app.put("/update-user-info", (request, response) => {
       //   request.body.personalInfoObject &&
       //   request.body.personalInfoObject.age
       // ) {
-      //   user.age = parseInt(request.body.personalInfoObject.age);
+      //   user.age = request.body.personalInfoObject.age;
       // }
-      if (
-        request.body.experienceObject &&
-        request.body.experienceObject.languages
-      ) {
-        user.languages = request.bodyrequest.body.experienceObject.languages;
-      }
-      if (request.body.files) {
-        user.files = request.body.files;
-      }
-      if (
-        request.body.personalInfoObject &&
-        request.body.personalInfoObject.phoneNumber
-      ) {
-        user.phone_number = request.body.personalInfoObject.phoneNumber;
-      }
+      // if (
+      //   request.body.experienceObject &&
+      //   request.body.experienceObject.languages
+      // ) {
+      //   user.languages = request.bodyrequest.body.experienceObject.languages;
+      // }
+      // if (request.body.files) {
+      //   user.files = request.body.files;
+      // }
+      // if (
+      //   request.body.personalInfoObject &&
+      //   request.body.personalInfoObject.phoneNumber
+      // ) {
+      //   user.phone_number = request.body.personalInfoObject.phoneNumber;
+      // }
       if (
         request.body.personalInfoObject &&
         request.body.personalInfoObject.address
