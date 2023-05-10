@@ -152,27 +152,27 @@ app.put("/update-user-info", (request, response) => {
       // if (request.body.assignments) {
       //   user.assignments = request.body.assignments;
       // }
-      // if (
-      //   request.body.personalInfoObject &&
-      //   request.body.personalInfoObject.age
-      // ) {
-      //   user.age = request.body.personalInfoObject.age;
-      // }
-      // if (
-      //   request.body.experienceObject &&
-      //   request.body.experienceObject.languages
-      // ) {
-      //   user.languages = request.bodyrequest.body.experienceObject.languages;
-      // }
-      // if (request.body.files) {
-      //   user.files = request.body.files;
-      // }
-      // if (
-      //   request.body.personalInfoObject &&
-      //   request.body.personalInfoObject.phoneNumber
-      // ) {
-      //   user.phone_number = request.body.personalInfoObject.phoneNumber;
-      // }
+      if (
+        request.body.personalInfoObject &&
+        request.body.personalInfoObject.age
+      ) {
+        user.age = request.body.personalInfoObject.age;
+      }
+      if (
+        request.body.experienceObject &&
+        request.body.experienceObject.languages
+      ) {
+        user.languages = request.bodyrequest.body.experienceObject.languages;
+      }
+      if (request.body.files) {
+        user.files = request.body.files;
+      }
+      if (
+        request.body.personalInfoObject &&
+        request.body.personalInfoObject.phoneNumber
+      ) {
+        user.phone_number = request.body.personalInfoObject.phoneNumber;
+      }
       if (
         request.body.personalInfoObject &&
         request.body.personalInfoObject.address
