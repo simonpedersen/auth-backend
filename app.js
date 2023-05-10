@@ -134,29 +134,29 @@ app.put("/update-user-info", (request, response) => {
       if (request.body.professionalArray) {
         user.work_experience = request.body.professionalArray;
       }
-      // if (
-      //   request.body.experienceObject &&
-      //   request.body.experienceObject.description
-      // ) {
-      //   user.personal_description = request.body.experienceObject.description;
-      // }
-      // if (request.body.available_time_slots) {
-      //   user.available_time_slots = request.body.available_time_slots;
-      // }
-      // if (request.body.maximum_mentees) {
-      //   user.maximum_mentees = request.body.maximum_mentees;
-      // }
-      // if (request.body.booked_times) {
-      //   user.booked_times = request.body.booked_times;
-      // }
-      // if (request.body.assignments) {
-      //   user.assignments = request.body.assignments;
-      // }
+      if (
+        request.body.experienceObject &&
+        request.body.experienceObject.description
+      ) {
+        user.personal_description = request.body.experienceObject.description;
+      }
+      if (request.body.available_time_slots) {
+        user.available_time_slots = request.body.available_time_slots;
+      }
+      if (request.body.maximum_mentees) {
+        user.maximum_mentees = parseInt(request.body.maximum_mentees);
+      }
+      if (request.body.booked_times) {
+        user.booked_times = request.body.booked_times;
+      }
+      if (request.body.assignments) {
+        user.assignments = request.body.assignments;
+      }
       if (
         request.body.personalInfoObject &&
         request.body.personalInfoObject.age
       ) {
-        user.age = request.body.personalInfoObject.age;
+        user.age = parseInt(request.body.personalInfoObject.age);
       }
       if (
         request.body.experienceObject &&
