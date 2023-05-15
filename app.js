@@ -190,36 +190,36 @@ app.put("/update-user-info", (request, response) => {
       if (request.body.files) {
         user.files = request.body.files;
       }
-      if (
-        request.body.personalInfoObject &&
-        request.body.personalInfoObject.phoneNumber
-      ) {
-        user.phone_number = request.body.personalInfoObject.phoneNumber;
-      }
-      if (
-        request.body.personalInfoObject &&
-        request.body.personalInfoObject.address
-      ) {
-        user.address = request.body.personalInfoObject.address;
-      }
-      if (
-        request.body.personalInfoObject &&
-        request.body.personalInfoObject.city
-      ) {
-        user.city = request.body.personalInfoObject.city;
-      }
-      if (
-        request.body.personalInfoObject &&
-        request.body.personalInfoObject.zipCode
-      ) {
-        user.postal_code = request.body.personalInfoObject.zipCode;
-      }
-      if (
-        request.body.personalInfoObject &&
-        request.body.personalInfoObject.gender
-      ) {
-        user.gender = request.body.personalInfoObject.gender;
-      }
+      // if (
+      //   request.body.personalInfoObject &&
+      //   request.body.personalInfoObject.phoneNumber
+      // ) {
+      //   user.phone_number = request.body.personalInfoObject.phoneNumber;
+      // }
+      // if (
+      //   request.body.personalInfoObject &&
+      //   request.body.personalInfoObject.address
+      // ) {
+      //   user.address = request.body.personalInfoObject.address;
+      // }
+      // if (
+      //   request.body.personalInfoObject &&
+      //   request.body.personalInfoObject.city
+      // ) {
+      //   user.city = request.body.personalInfoObject.city;
+      // }
+      // if (
+      //   request.body.personalInfoObject &&
+      //   request.body.personalInfoObject.zipCode
+      // ) {
+      //   user.postal_code = request.body.personalInfoObject.zipCode;
+      // }
+      // if (
+      //   request.body.personalInfoObject &&
+      //   request.body.personalInfoObject.gender
+      // ) {
+      //   user.gender = request.body.personalInfoObject.gender;
+      // }
       user.form_succeded = true;
 
       // save the updated user
