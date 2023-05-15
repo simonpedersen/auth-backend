@@ -84,6 +84,27 @@ app.post("/register", (request, response) => {
 });
 
 app.put("/update-user-info", (request, response) => {
+  // Code to convert image to base64-string for mananging the image in the database
+  const toBase64 = (file) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
+  toBase64(file)
+    .then((result) => {
+      console.log(result);
+      const newValues = {
+        ...formValuesPersonalInfo,
+        profilePicture: result,
+      };
+      setformValuesPersonalInfo(newValues);
+      personalInfoObjectChange(newValues);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   // find the user by ID
   User.findById(request.body.userID)
     .then((user) => {
@@ -129,7 +150,9 @@ app.put("/update-user-info", (request, response) => {
         request.body.personalInfoObject &&
         request.body.personalInfoObject.profilePicture
       ) {
-        user.profile_pic = request.body.personalInfoObject.profilePicture;
+        user.profile_pic = toBase64(
+          request.body.personalInfoObject.profilePicture
+        );
       }
       if (request.body.professionalArray) {
         user.work_experience = request.body.professionalArray;
