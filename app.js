@@ -223,6 +223,13 @@ app.put("/update-user-info", (request, response) => {
       ) {
         user.gender = request.body.personalInfoObject.gender;
       }
+      if (request.body.goals) {
+        user.goals = request.body.goals;
+      }
+
+      if (request.body.main_goal) {
+        user.main_goal = request.body.main_goal;
+      }
       user.form_succeded = true;
 
       // save the updated user

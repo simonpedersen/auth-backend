@@ -118,6 +118,14 @@ const UserSchema = new mongoose.Schema({
   gender: {
     type: String,
   },
+
+  main_goal: {
+    type: String,
+  },
+
+  goals: {
+    type: [String],
+  },
 });
 
 // export UserSchema
