@@ -135,7 +135,8 @@ app.put("/update-user-info", (request, response) => {
       }
       if (
         request.body.personalInfoObject &&
-        request.body.personalInfoObject.profilePicture
+        request.body.personalInfoObject.profilePicture &&
+        file
       ) {
         const toBase64 = (file) =>
           new Promise((resolve, reject) => {
@@ -147,12 +148,15 @@ app.put("/update-user-info", (request, response) => {
         toBase64(file)
           .then((result) => {
             console.log(result);
-            user.profile_pic = result;
+            if (user) {
+              user.profile_pic = result;
+            }
           })
           .catch((error) => {
             console.log(error);
           });
       }
+
       if (request.body.professionalArray) {
         user.work_experience = request.body.professionalArray;
       }
