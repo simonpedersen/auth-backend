@@ -133,14 +133,26 @@ app.put("/update-user-info", (request, response) => {
       if (request.body.academicArray) {
         user.academic_experiences = request.body.academicArray;
       }
-      // if (
-      //   request.body.personalInfoObject &&
-      //   request.body.personalInfoObject.profilePicture
-      // ) {
-      //   user.profile_pic = toBase64(
-      //     request.body.personalInfoObject.profilePicture
-      //   );
-      // }
+      if (
+        request.body.personalInfoObject &&
+        request.body.personalInfoObject.profilePicture
+      ) {
+        const toBase64 = (file) =>
+          new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = (error) => reject(error);
+          });
+        toBase64(file)
+          .then((result) => {
+            console.log(result);
+            user.profile_pic = result;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
       if (request.body.professionalArray) {
         user.work_experience = request.body.professionalArray;
       }
