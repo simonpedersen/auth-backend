@@ -116,36 +116,36 @@ app.put("/update-user-info", (request, response) => {
       }
 
       // update the user
-      if (request.body.name) {
-        user.name = request.body.name;
-      }
-      if (request.body.email) {
-        user.email = request.body.email;
-      }
-      if (request.body.password) {
-        user.password = request.body.password;
-      }
-      if (request.body.mentor !== undefined) {
-        user.mentor = request.body.mentor;
-      }
-      if (request.body.mentees_id) {
-        user.mentees_id = request.body.mentees_id;
-      }
-      if (request.body.mentor_id) {
-        user.mentor_id = request.body.mentor_id;
-      }
-      if (request.body.interestsArray) {
-        user.interests = request.body.interestsArray;
-      }
-      if (
-        request.body.experienceObject &&
-        request.body.experienceObject.academicExperience
-      ) {
-        user.academic_level = request.body.experienceObject.academicExperience;
-      }
-      if (request.body.academicArray) {
-        user.academic_experiences = request.body.academicArray;
-      }
+      // if (request.body.name) {
+      //   user.name = request.body.name;
+      // }
+      // if (request.body.email) {
+      //   user.email = request.body.email;
+      // }
+      // if (request.body.password) {
+      //   user.password = request.body.password;
+      // }
+      // if (request.body.mentor !== undefined) {
+      //   user.mentor = request.body.mentor;
+      // }
+      // if (request.body.mentees_id) {
+      //   user.mentees_id = request.body.mentees_id;
+      // }
+      // if (request.body.mentor_id) {
+      //   user.mentor_id = request.body.mentor_id;
+      // }
+      // if (request.body.interestsArray) {
+      //   user.interests = request.body.interestsArray;
+      // }
+      // if (
+      //   request.body.experienceObject &&
+      //   request.body.experienceObject.academicExperience
+      // ) {
+      //   user.academic_level = request.body.experienceObject.academicExperience;
+      // }
+      // if (request.body.academicArray) {
+      //   user.academic_experiences = request.body.academicArray;
+      // }
       // if (
       //   request.body.personalInfoObject &&
       //   request.body.personalInfoObject.profilePicture
@@ -163,30 +163,30 @@ app.put("/update-user-info", (request, response) => {
       // ) {
       //   user.personal_description = request.body.experienceObject.description;
       // }
-      // if (request.body.available_time_slots) {
-      //   user.available_time_slots = request.body.available_time_slots;
-      // }
-      // if (request.body.maximum_mentees) {
-      //   user.maximum_mentees = request.body.maximum_mentees;
-      // }
-      // if (request.body.booked_times) {
-      //   user.booked_times = request.body.booked_times;
-      // }
-      // if (request.body.assignments) {
-      //   user.assignments = request.body.assignments;
-      // }
-      // if (
-      //   request.body.personalInfoObject &&
-      //   request.body.personalInfoObject.age
-      // ) {
-      //   user.age = parseInt(request.body.personalInfoObject.age);
-      // }
-      // if (
-      //   request.body.experienceObject &&
-      //   request.body.experienceObject.languages
-      // ) {
-      //   user.languages = request.body.experienceObject.languages;
-      // }
+      if (request.body.available_time_slots) {
+        user.available_time_slots = request.body.available_time_slots;
+      }
+      if (request.body.maximum_mentees) {
+        user.maximum_mentees = request.body.maximum_mentees;
+      }
+      if (request.body.booked_times) {
+        user.booked_times = request.body.booked_times;
+      }
+      if (request.body.assignments) {
+        user.assignments = request.body.assignments;
+      }
+      if (
+        request.body.personalInfoObject &&
+        request.body.personalInfoObject.age
+      ) {
+        user.age = parseInt(request.body.personalInfoObject.age);
+      }
+      if (
+        request.body.experienceObject &&
+        request.body.experienceObject.languages
+      ) {
+        user.languages = request.body.experienceObject.languages;
+      }
       if (request.body.files) {
         user.files = request.body.files;
       }
