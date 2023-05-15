@@ -92,19 +92,6 @@ app.put("/update-user-info", (request, response) => {
       reader.onload = () => resolve(reader.result);
       reader.onerror = (error) => reject(error);
     });
-  toBase64(file)
-    .then((result) => {
-      console.log(result);
-      const newValues = {
-        ...formValuesPersonalInfo,
-        profilePicture: result,
-      };
-      setformValuesPersonalInfo(newValues);
-      personalInfoObjectChange(newValues);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
   // find the user by ID
   User.findById(request.body.userID)
     .then((user) => {
@@ -116,53 +103,53 @@ app.put("/update-user-info", (request, response) => {
       }
 
       // update the user
-      // if (request.body.name) {
-      //   user.name = request.body.name;
-      // }
-      // if (request.body.email) {
-      //   user.email = request.body.email;
-      // }
-      // if (request.body.password) {
-      //   user.password = request.body.password;
-      // }
-      // if (request.body.mentor !== undefined) {
-      //   user.mentor = request.body.mentor;
-      // }
-      // if (request.body.mentees_id) {
-      //   user.mentees_id = request.body.mentees_id;
-      // }
-      // if (request.body.mentor_id) {
-      //   user.mentor_id = request.body.mentor_id;
-      // }
-      // if (request.body.interestsArray) {
-      //   user.interests = request.body.interestsArray;
-      // }
-      // if (
-      //   request.body.experienceObject &&
-      //   request.body.experienceObject.academicExperience
-      // ) {
-      //   user.academic_level = request.body.experienceObject.academicExperience;
-      // }
-      // if (request.body.academicArray) {
-      //   user.academic_experiences = request.body.academicArray;
-      // }
-      // if (
-      //   request.body.personalInfoObject &&
-      //   request.body.personalInfoObject.profilePicture
-      // ) {
-      //   user.profile_pic = toBase64(
-      //     request.body.personalInfoObject.profilePicture
-      //   );
-      // }
+      if (request.body.name) {
+        user.name = request.body.name;
+      }
+      if (request.body.email) {
+        user.email = request.body.email;
+      }
+      if (request.body.password) {
+        user.password = request.body.password;
+      }
+      if (request.body.mentor !== undefined) {
+        user.mentor = request.body.mentor;
+      }
+      if (request.body.mentees_id) {
+        user.mentees_id = request.body.mentees_id;
+      }
+      if (request.body.mentor_id) {
+        user.mentor_id = request.body.mentor_id;
+      }
+      if (request.body.interestsArray) {
+        user.interests = request.body.interestsArray;
+      }
+      if (
+        request.body.experienceObject &&
+        request.body.experienceObject.academicExperience
+      ) {
+        user.academic_level = request.body.experienceObject.academicExperience;
+      }
+      if (request.body.academicArray) {
+        user.academic_experiences = request.body.academicArray;
+      }
+      if (
+        request.body.personalInfoObject &&
+        request.body.personalInfoObject.profilePicture
+      ) {
+        user.profile_pic = toBase64(
+          request.body.personalInfoObject.profilePicture
+        );
+      }
       if (request.body.professionalArray) {
         user.work_experience = request.body.professionalArray;
       }
-      // if (
-      //   request.body.experienceObject &&
-      //   request.body.experienceObject.description
-      // ) {
-      //   user.personal_description = request.body.experienceObject.description;
-      // }
+      if (
+        request.body.experienceObject &&
+        request.body.experienceObject.description
+      ) {
+        user.personal_description = request.body.experienceObject.description;
+      }
       if (request.body.available_time_slots) {
         user.available_time_slots = request.body.available_time_slots;
       }
