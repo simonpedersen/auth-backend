@@ -146,14 +146,14 @@ app.put("/update-user-info", (request, response) => {
       if (request.body.academicArray) {
         user.academic_experiences = request.body.academicArray;
       }
-      if (
-        request.body.personalInfoObject &&
-        request.body.personalInfoObject.profilePicture
-      ) {
-        user.profile_pic = toBase64(
-          request.body.personalInfoObject.profilePicture
-        );
-      }
+      // if (
+      //   request.body.personalInfoObject &&
+      //   request.body.personalInfoObject.profilePicture
+      // ) {
+      //   user.profile_pic = toBase64(
+      //     request.body.personalInfoObject.profilePicture
+      //   );
+      // }
       if (request.body.professionalArray) {
         user.work_experience = request.body.professionalArray;
       }
