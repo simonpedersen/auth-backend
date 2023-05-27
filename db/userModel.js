@@ -126,6 +126,9 @@ const UserSchema = new mongoose.Schema({
   goals: {
     type: [String],
   },
+  latest_login: {
+    type: Date,
+  },
 });
 
 // export UserSchema

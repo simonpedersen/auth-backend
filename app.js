@@ -116,7 +116,7 @@ app.put("/update-user-info", (request, response) => {
         user.mentor = request.body.mentor;
       }
       if (request.body.mentees_id) {
-        user.mentees_id = request.body.mentees_id;
+        user.mentees_id.push(request.body.mentees_id);
       }
       if (request.body.mentor_id) {
         user.mentor_id = request.body.mentor_id;
@@ -164,7 +164,7 @@ app.put("/update-user-info", (request, response) => {
         request.body.experienceObject &&
         request.body.experienceObject.description
       ) {
-        user.personal_description = request.body.experienceObject.description;
+        user.personal_description = request.body.personalInfoObject.description;
       }
       if (request.body.available_time_slots) {
         user.available_time_slots = request.body.available_time_slots;
@@ -275,10 +275,13 @@ app.post("/login", (request, response) => {
           // check if password matches
           if (!passwordCheck) {
             return response.status(400).send({
-              message: "Passwords does not match",
+              message: "Wrong password, try again",
               error,
             });
           }
+          // update latest_login field with today's date
+          user.latest_login = Date.now();
+          user.save();
 
           //   create JWT token
           const token = jwt.sign(
@@ -307,7 +310,7 @@ app.post("/login", (request, response) => {
         // catch error if password do not match
         .catch((error) => {
           response.status(400).send({
-            message: "Passwords does not match",
+            message: "Wrong password, try again",
             error,
           });
         });
