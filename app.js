@@ -280,7 +280,7 @@ app.post("/login", (request, response) => {
             });
           }
           // update latest_login field with today's date
-          user.latest_login = Date.now();
+          user.latest_login = new Date().toISOString();
           user.save();
 
           //   create JWT token
