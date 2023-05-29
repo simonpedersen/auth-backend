@@ -161,8 +161,8 @@ app.put("/update-user-info", (request, response) => {
         user.work_experience = request.body.professionalArray;
       }
       if (
-        request.body.experienceObject &&
-        request.body.experienceObject.description
+        request.body.personalInfoObject &&
+        request.body.personalInfoObject.description
       ) {
         user.personal_description = request.body.personalInfoObject.description;
       }
